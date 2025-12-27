@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pediatric Choking Response Demonstrator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚑</text></svg>">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><i class="fas fa-child"></i> Pediatric Choking Response Demonstrator</h1>
+            <p class="subtitle">Interactive guide for choking first aid in children</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="warning-banner">
+            <i class="fas fa-exclamation-triangle"></i>
+            <strong>Emergency Notice:</strong> This tool is for educational purposes only. In a real choking emergency, call emergency services immediately (911 in US/Canada, 112 in EU, 000 in Australia).
+        </section>
+
+        <section class="intro">
+            <h2><i class="fas fa-info-circle"></i> How to Use This Tool</h2>
+            <p>Select a child's age group below to see step-by-step instructions for proper choking response techniques. Follow along with the interactive demonstration.</p>
+        </section>
+
+        <section class="age-selection">
+            <h2><i class="fas fa-user"></i> Select Age Group</h2>
+            <div class="age-buttons">
+                <button class="age-btn active" data-age="infant">
+                    <i class="fas fa-baby"></i>
+                    <span>Infant</span>
+                    <small>(Under 1 year)</small>
+                </button>
+                <button class="age-btn" data-age="toddler">
+                    <i class="fas fa-child"></i>
+                    <span>Toddler</span>
+                    <small>(1-3 years)</small>
+                </button>
+                <button class="age-btn" data-age="child">
+                    <i class="fas fa-user"></i>
+                    <span>Child</span>
+                    <small>(4+ years)</small>
+                </button>
+            </div>
+        </section>
+
+        <section class="technique-section">
+            <h2><i class="fas fa-hand-holding-medical"></i> Response Techniques</h2>
+            <div class="technique-tabs">
+                <button class="tab-btn active" data-technique="back-blows">Back Blows</button>
+                <button class="tab-btn" data-technique="abdominal-thrusts">Abdominal Thrusts</button>
+                <button class="tab-btn" data-technique="chest-thrusts">Chest Thrusts (Infants)</button>
+            </div>
+
+            <div class="technique-content">
+                <div class="step-display">
+                    <div class="step-number">Step <span id="current-step">1</span> of <span id="total-steps">5</span></div>
+                    <div class="step-title" id="step-title">Position the child safely</div>
+                    <div class="step-description" id="step-description">
+                        For infants: Place infant face-down along your forearm, head lower than chest, supporting head and jaw with your hand.
+                    </div>
+                    <div class="step-image" id="step-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-user-nurse"></i>
+                            <p>Visual demonstration image</p>
+                        </div>
+                    </div>
+                    <div class="step-navigation">
+                        <button id="prev-btn" class="nav-btn"><i class="fas fa-arrow-left"></i> Previous</button>
+                        <button id="next-btn" class="nav-btn">Next <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <div class="technique-info">
+                    <h3><i class="fas fa-lightbulb"></i> Key Points</h3>
+                    <ul id="key-points">
+                        <li>Always call emergency services first</li>
+                        <li>For infants, NEVER perform abdominal thrusts</li>
+                        <li>Deliver firm, quick blows/thrusts</li>
+                        <li>Continue until object is expelled or child becomes unresponsive</li>
+                    </ul>
+                    <div class="emergency-reminder">
+                        <i class="fas fa-phone-alt"></i>
+                        <strong>Remember:</strong> If alone with a choking child, perform 2 minutes of care before calling for help.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="practice-section">
+            <h2><i class="fas fa-dumbbell"></i> Interactive Practice</h2>
+            <p>Test your knowledge with this simulated scenario:</p>
+            <div class="scenario">
+                <p id="scenario-text">A 2-year-old is eating grapes at a party. Suddenly, she stops making noise and clutches her throat. She cannot cough or speak. What should you do first?</p>
+                <div class="options">
+                    <button class="option-btn">Perform back blows immediately</button>
+                    <button class="option-btn">Give her water to drink</button>
+                    <button class="option-btn">Call emergency services</button>
+                    <button class="option-btn">Perform abdominal thrusts</button>
+                </div>
+                <div class="feedback" id="feedback"></div>
+                <button id="next-scenario" class="secondary-btn"><i class="fas fa-redo"></i> Next Scenario</button>
+            </div>
+        </section>
+
+        <section class="resources">
+            <h2><i class="fas fa-book"></i> Additional Resources</h2>
+            <div class="resource-cards">
+                <div class="card">
+                    <i class="fas fa-file-alt"></i>
+                    <h3>Printable Guide</h3>
+                    <p>Download a PDF quick-reference for choking response.</p>
+                    <a href="../educational-content/emergency-response.md" class="card-link">View Guide</a>
+                </div>
+                <div class="card">
+                    <i class="fas fa-video"></i>
+                    <h3>Video Tutorials</h3>
+                    <p>Watch certified instructors demonstrate techniques.</p>
+                    <a href="#" class="card-link">Coming Soon</a>
+                </div>
+                <div class="card">
+                    <i class="fas fa-certificate"></i>
+                    <h3>Find a Course</h3>
+                    <p>Locate pediatric CPR/choking courses near you.</p>
+                    <a href="https://www.redcross.org/take-a-class" class="card-link" target="_blank">Red Cross</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>This educational tool is part of the <a href="https://github.com/kippy-bing/pediatric-choking-prevention-resource" target="_blank">Pediatric Choking Prevention Resource</a> project.</p>
+            <p><strong>Disclaimer:</strong> This tool does not replace certified training. Always seek professional medical training for emergency response skills.</p>
+            <p class="footer-links">
+                <a href="../CONTRIBUTING.md">Contribute</a> |
+                <a href="../CODE_OF_CONDUCT.md">Code of Conduct</a> |
+                <a href="../LICENSE">License</a> |
+                <a href="https://github.com/kippy-bing/pediatric-choking-prevention-resource/issues">Report Issue</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
